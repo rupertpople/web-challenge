@@ -6,9 +6,19 @@ get '/' do
 end
 
 get '/animal/' do
-  'This is an animal. Its a giraffe!'
+  'This is an animal. Its a elephant!'
 end
 
 get '/pet/' do
   'This is a dog. He is called Milo. He is a french bulldog.'
+end
+
+get '/random-cat/' do
+  @cat_name = ["Amigo", "Misty", "Almond"].sample
+  erb(:index)
+end
+
+get '/named-cat/' do
+  @cat_name = params[:cat_name]
+  erb(:index)
 end
